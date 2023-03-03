@@ -1,12 +1,16 @@
+//Importing link component from next to allow url redirects
+
+import Link from "next/link"
+
 export default function Navbar(){
     return(
         <nav>
             <div className="logo">
                 <h1>Ninja List</h1>
             </div>
-            <a>Home</a>
-            <a>About</a>
-            <a>Ninja Listing</a>
+            <Link href='/'>Home</Link>
+            <Link href='/about'>About</Link>
+            <Link href='/ninjas/'>Ninja-List</Link>
       </nav>
 
     )
