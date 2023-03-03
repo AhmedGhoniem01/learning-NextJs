@@ -4,6 +4,7 @@
 
 import Head from "next/head"
 import styles from "../../styles/list.module.css"
+import Link from "next/link";
 
 //adding head next tag to crete custom head tags that are dynamically inserted in the head of the _app.js when the page is rendered
 //head tag can be used for title and other metadata
@@ -16,11 +17,11 @@ export const getStaticProps = async() => {
     const res = await fetch('https://jsonplaceholder.typicode.com/users');
     const data = await res.json();
     return {
-        props: {users: data}
+        props: {ninjas: data}
     }
 }
 
-const  ninjas = ({users}) => {
+const  ninjas = ({ninjas}) => {
     return(
         <div>
             <Head>
@@ -29,9 +30,11 @@ const  ninjas = ({users}) => {
             </Head>
 
             <h1>Ninja-List</h1>
-            {users.map((user) => (
-                    <div key={user.id}>
-                        <a className={styles.single}><h3>{user.name}</h3></a>
+            {ninjas.map((ninja) => (
+                    <div key={ninja.id}>
+                        <Link className={styles.single} href={"/ninjas/" + ninja.id}>
+                            <h3>{ninja.name}</h3>
+                        </Link>
                     </div>
                 )
             )}
