@@ -10,6 +10,7 @@ import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
 import Link from "next/link";
 import styles from '../styles/Home.module.css'
+
 //styles can be added either globally in the global css file
 // styles in the global file applies to all pages
 //or you can make seperate css file, one for each component and then you can import it and use it
@@ -20,6 +21,10 @@ import styles from '../styles/Home.module.css'
 export default function Home() {
   return (
     <>
+      <Head>
+        <title>Ninja List | Home</title>
+        <meta name="keywords" content="ninjas"/>
+      </Head>
       <h1 className={styles.title}>Homepage</h1>
       <p  className={styles.text}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus animi impedit suscipit architecto, odio inventore nostrum non neque dicta. Quam magni accusantium culpa distinctio tempore iure accusamus, dolorem nobis odit.</p>
       <p  className={styles.text}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus animi impedit suscipit architecto, odio inventore nostrum non neque dicta. Quam magni accusantium culpa distinctio tempore iure accusamus, dolorem nobis odit.</p> 
